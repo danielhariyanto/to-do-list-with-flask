@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>To-Do List </title>
+<title>To-Do List</title>
 {% endblock %}
 
 
 {% block body %}
   <div class="content">
-    <h1>To-Do List</h1>
-
+    <h1 style="text-align: center">To-Do List</h1>
+    {% if task|length < 1 %}
+    <h4 style="text-align: center">Create a task!</h4>
+    {% else %}
     <table>
       <tr>
         <th>Task</th>
@@ -20,13 +22,14 @@
           <td>{{ task.content }}</td>
           <td>{{ task.date_created.date() }}</td>
           <td>
-            <a href="">Delete</a>
+            <a href="/delete/{{task.id}}">Delete</a>
             <br>
-            <a href="">Update</a>
+            <a href="/update/{{task.id}}">Update</a>
           </td>
         </tr>
       {% endfor %}
     </table>
+    {% endif %}
 
     <form action="/" method="POST">
       <input type="text" name="content" id="content">
