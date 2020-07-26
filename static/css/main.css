@@ -5,31 +5,45 @@ body, html {
 
 .content {
     margin: 0 auto;
-    width: 400px;
-}
-
-table, td, th {
-    border: 1px solid #aaa;
+    width: 800px;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  overflow: hidden;
 }
 
 th {
+    text-align: left;
     height: 30px;
+    padding: 5px;
 }
 
 td {
-    text-align: center;
+    text-align: left;
     padding: 5px;
 }
 
 .form {
-    margin-top: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    width: 50%;
 }
 
 #content {
-    width: 70%;
+    width: 50%;
+}
+
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  text-align: center;
+  text-decoration: underline;
+}
+
+a:hover, a:active {
+  color: grey;
 }

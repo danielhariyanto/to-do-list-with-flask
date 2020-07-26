@@ -11,19 +11,23 @@
   <h4 style="text-align: center">Create a task below!</h4>
   {% else %}
   <table>
+    <colgroup>
+      <col style="width: 50">
+      <col style="width: 25%">
+      <col style="width: 25%">
+    </colgroup>
     <tr>
       <th>Task</th>
       <th>Added</th>
-      <th>Actions</th>
+      <th></th>
     </tr>
     {% for task in tasks %}
       <tr>
         <td>{{ task.content }}</td>
         <td>{{ task.date_created.date() }}</td>
         <td>
-          <a href="/delete/{{task.id}}">Delete</a>
-          <br>
           <a href="/update/{{task.id}}">Update</a>
+          <a style="margin-left: 3em" href="/delete/{{task.id}}">Delete</a>
         </td>
       </tr>
     {% endfor %}
