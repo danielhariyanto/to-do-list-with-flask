@@ -65,6 +65,7 @@ input[type=submit]{
   padding: 7px 12px;
   text-decoration: none;
   margin: 5px;
+  box-sizing: border-box;
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
