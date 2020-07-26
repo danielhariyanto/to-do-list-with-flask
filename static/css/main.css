@@ -9,7 +9,7 @@ body, html {
 }
 
 table {
-  table-layout: fixed;
+  table-layout: auto;
   border-collapse: collapse;
   width: 100%;
   overflow: hidden;
@@ -18,23 +18,61 @@ table {
 th {
     text-align: left;
     height: 30px;
-    padding: 5px;
+    padding: 10px;
+    font-size: 20px;
 }
 
 td {
     text-align: left;
-    padding: 5px;
+    padding: 10px;
+    padding-right: 20px;
 }
 
 .form {
     text-align: center;
     margin: auto;
-    margin-top: 50px;
-    width: 50%;
+    margin-top: 30px;
+    width: 80%;
 }
 
 #content {
     width: 50%;
+}
+
+input[type=text] {
+  font-size: 12px;
+  width: 100%;
+  padding: 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 3px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 2px solid grey;
+  border-radius: 3px;
+}
+
+input[type=submit]{
+  font-size: 12px;
+  background-color: black;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 7px 12px;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+input[type=submit]:hover {
+  background-color: grey;
 }
 
 a:link, a:visited {
@@ -42,6 +80,8 @@ a:link, a:visited {
   color: black;
   text-align: center;
   text-decoration: underline;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 a:hover, a:active {
