@@ -9,11 +9,11 @@ db = SQLAlchemy(app)
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
-    #completed = db.Column(db.Integer, default=0)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return '<Task %r>' % self.id
+
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -36,6 +36,7 @@ def index():
 @app.route('/delete/<int:id>')
 def delete(id):
     task_to_delete = Todo.query.get_or_404(id)
+
     try:
         db.session.delete(task_to_delete)
         db.session.commit()
